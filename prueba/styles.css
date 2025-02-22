@@ -1,0 +1,321 @@
+.page,
+.page * {
+    box-sizing: border-box;
+}
+
+.page {
+    background: #ffffff;
+    padding: 80px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: flex-start;
+    height: 4069px;
+    position: relative;
+}
+
+
+
+/* Estilos globales */
+a,
+button,
+input,
+select,
+h1,
+h2,
+h3,
+h4,
+h5,
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    background: none;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+menu,
+ol,
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo global para resetear algunos valores */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    background: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+}
+
+/* cambio 11111 */
+
+/* Estilo global */
+
+
+/* Barra superior */
+.top-bar {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+}
+
+/* Logo y título */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 500;
+    color: #000;
+}
+
+/* Estilos de navegación */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-list li a {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-list li a:hover {
+    color: #007BFF;
+}
+
+/* Contenedor de búsqueda */
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 8px;
+}
+
+.search-container input {
+    width: 200px;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.search-container button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-container img {
+    width: 20px;
+    height: 20px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+
+
+/* segunda refactorizacion */
+/* Estilos generales de la sección */
+.section {
+    padding: 60px 170px 60px 170px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    align-self: stretch;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Contenedor para el avatar */
+.avatar-container {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.avatar {
+    background: rgba(217, 217, 217, 0.5);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+/* Contenedor de texto */
+.text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+}
+
+.name {
+    font-family: "Roboto-Bold", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    text-align: left;
+    line-height: 32px;
+    position: relative;
+    align-self: stretch;
+}
+
+.tags {
+    display: flex;
+    gap: 6px;
+    align-self: stretch;
+}
+
+.tag {
+    background: rgba(217, 217, 217, 0.5);
+    border-radius: 2px;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    padding: 2px 4px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description {
+    font-family: "Roboto-Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    text-align: left;
+    align-self: stretch;
+}
+
+/* Contenedor de botones */
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.button {
+    display: inline-flex;
+    padding: 0.5rem 1rem;
+    min-width: 8rem;
+    height: 3rem;
+    white-space: nowrap;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    width: 192px;
+    text-align: left;
+
+}
+
+.secondary-button {
+    border: 1px solid #000000;
+    background: none;
+}
+
+.primary-button {
+    background: #000;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+
+}
+
+.button-title {
+    font-family: "Roboto-Medium", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+    text-align: left;
+    line-height: 24px;
+    position: relative;
+
+}
+
+.primary-button .button-title {
+    color: #ffffff;
+    /* Texto blanco para el botón primario */
+}
+
+
+.vector {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: visible;
+}

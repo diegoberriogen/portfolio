@@ -1,0 +1,666 @@
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    display: flex;
+    font-family: Arial, sans-serif;
+    color azul anterior  #040b14
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+h1,
+h3 {
+    color: #040b14;
+
+}
+
+p1 {
+    color: #475569;
+}
+
+/* Header (lado izquierdo) */
+.header {
+    position: fixed;
+    /* Hace que la cabecera se quede fija */
+    top: 0;
+    /* Asegura que esté en la parte superior de la página */
+    left: 0;
+    /* Asegura que esté pegada a la izquierda */
+    width: 20%;
+    /* 1/3 del ancho de la página */
+    background-color: #040b14;
+    color: #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 10;
+    /* Asegura que esté encima del contenido derecho */
+}
+
+.avatar-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #64748b;
+    margin-bottom: 1rem;
+}
+
+.name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+/* 
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+
+.tag {
+    background-color: #475569;
+    color: #f1f5f9;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+} */
+
+.description {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+
+.social-media {
+    display: flex;
+    gap: 10px;
+    /* Espacio entre íconos */
+    justify-content: center;
+    /* Centrar horizontalmente */
+    margin-top: 20px;
+}
+
+.social-media a {
+    background-color: rgba(64, 70, 80, 0.8);
+    /* Grisáceo opaco */
+    color: rgba(255, 255, 255, 0.856);
+    /* Blanco opaco */
+    font-size: 1.2rem;
+    /* Íconos más pequeños */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.social-media a:hover {
+    background-color: #fff;
+    /* Fondo blanco al hacer hover */
+    color: #040b14;
+    /* Ícono en color oscuro al hacer hover */
+    transform: scale(1.1);
+    /* Ligero aumento de tamaño */
+}
+
+
+.animated-shape-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+/* Navbar estilos */
+.navbar {
+    width: 100%;
+    margin-bottom: 2rem;
+    padding-top: 50px;
+}
+
+/* Estilos generales de la lista de navegación */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-left: 20px;
+    /* Separar del borde izquierdo */
+}
+
+/* Estilos para los enlaces */
+.nav-list a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+    /* Blanco opaco por defecto */
+    font-size: 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s, transform 0.3s;
+    padding-left: 40px;
+    /* Espacio inicial para la línea */
+}
+
+/* Línea a la izquierda */
+.nav-list a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    /* Línea corta inicial */
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Blanco opaco */
+    transition: width 0.3s ease, left 0.3s ease, background-color 0.3s;
+}
+
+/* Efecto al pasar el mouse */
+.nav-list a:hover {
+    color: rgba(255, 255, 255, 0.8);
+    /* Un poco más brillante */
+    transform: translateX(20px);
+}
+
+.nav-list a:hover::before {
+    width: 60px;
+    /* Línea más larga */
+    left: -20px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Sección activa: blanco puro y línea completa */
+.nav-list a.active {
+    color: rgba(255, 255, 255, 1);
+    transform: translateX(20px);
+}
+
+.nav-list a.active::before {
+    width: 60px;
+    left: -20px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* Iconos */
+.icon {
+    font-size: 1.2rem;
+}
+
+/* Botones */
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-top: auto;
+}
+
+.button {
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.primary-button {
+    background-color: #0ea5e9;
+    color: white;
+}
+
+.secondary-button {
+    background-color: #475569;
+    color: white;
+}
+
+/* Main content (lado derecho) */
+.main-content {
+    width: 80%;
+    /* 2/3 del ancho de la página */
+    /* padding: 2rem; */
+    margin-left: 20%;
+    /* Deja espacio suficiente para la sección fija a la izquierda */
+    overflow-y: auto;
+}
+
+.portInicio {
+    margin-top: 0%;
+    height: 100vh;
+    background: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)),
+        url('../images/fondo2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+
+}
+
+.content {
+    text-align: center;
+    max-width: 600px;
+
+}
+
+#typed-output {
+    font-weight: bold;
+    color: white;
+}
+
+.content p1 {
+    color: white;
+
+}
+
+.content h1 {
+    color: white;
+}
+
+/* borrar en caso de */
+section#about-me {
+    padding: 80px 20px;
+    width: auto;
+    margin: auto;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-left: 20px;
+    padding-right: 30px;
+    /* Más pegado a la izquierda */
+}
+
+/* Títulos y textos */
+.about-header {
+    text-align: left;
+}
+
+.about-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #040b14;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.about-header p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.info-container h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Imagen */
+.image-container img {
+    max-width: 500px;
+    max-height: 500px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.image-container img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor derecho */
+.about-main {
+    padding-top: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.info-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-lists {
+    display: flex;
+    gap: 50px;
+}
+
+/* Listas con mayor separación vertical */
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-list li {
+    font-size: 1.1rem;
+    color: #040b14;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-bottom: 20px;
+}
+
+.info-list li strong {
+    font-weight: bold;
+    color: #333;
+}
+
+.info-list li a {
+    color: #040b14;
+    text-decoration: none;
+}
+
+.info-list li a:hover {
+    text-decoration: underline;
+}
+
+/* Sección de la cita inspiradora */
+.quote-container {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #ff7f50;
+    /* Toque de color */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.quote {
+    font-size: 1.5rem;
+    color: #555;
+    font-style: italic;
+    margin: 0;
+}
+
+.author {
+    display: block;
+    font-size: 1.1rem;
+    color: #333;
+    margin-top: 10px;
+    text-align: right;
+}
+
+/* Animación */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hobbies-container {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hobbies-container h2 {
+    font-size: 2rem;
+    color: #040b14;
+    margin-bottom: 20px;
+}
+
+.hobbies-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.hobbies-list li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.hobbies-container p {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 20px;
+}
+
+
+/* borrar en caso de */
+
+
+
+section {
+    margin-top: 2rem;
+}
+
+section h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+section p {
+    font-size: 1rem;
+    color: #475569;
+    line-height: 1.5;
+}
+
+
+
+
+/* Estilo para la sección de Skills */
+#skills {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #040b14;
+    /* Fondo del header */
+    color: #fff;
+    padding: 3rem 2rem;
+}
+
+.skills-content {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.skills-header {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.skills-header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.skills-header p {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+}
+
+.skills-category {
+    margin-bottom: 2.5rem;
+}
+
+.skills-category h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #0ea5e9;
+    /* Color principal */
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+}
+
+.skill-item {
+    background-color: #475569;
+    /* Color extra */
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.skill-item i {
+    font-size: 1.4rem;
+}
+
+.skill-item:hover {
+    background-color: #0ea5e9;
+    /* Hover en skills */
+    transform: scale(1.05);
+}
+
+/* Educación */
+.education {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.education h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #0ea5e9;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsividad */
+@media (min-width: 768px) {
+    .skills-header h1 {
+        font-size: 3rem;
+    }
+
+    .skills-header p {
+        font-size: 1.1rem;
+    }
+
+    .skills-category h3 {
+        font-size: 1.8rem;
+    }
+
+    .skills-list {
+        flex-wrap: nowrap;
+    }
+
+    .skill-item {
+        font-size: 1rem;
+        width: auto;
+    }
+}
+
+
+
+/* Sección de Proyectos */
+.projects-list {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.project-item {
+    background-color: #f1f5f9;
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 300px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+}
+
+.project-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-details {
+    padding: 1rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.project-button {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #0ea5e9;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.project-button:hover {
+    background-color: #0284c7;
+}
