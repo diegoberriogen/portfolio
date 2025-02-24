@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - Diego Steeven Berrio Ortiz</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
     <link rel="stylesheet" href="./output.css">
     <!-- Agregar Font Awesome en tu archivo HTML -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -19,9 +19,6 @@
         <i class="fas fa-bars"></i>
     </div>
 
-    <div class="menu-icon" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-    </div>
 
     <div class="mobile-menu">
         <nav class="navbar">
@@ -29,7 +26,7 @@
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#about-me">Acerca de mí</a></li>
                 <li><a href="#skills">habilidades</a></li>
-                <li><a href="#portfolio">Portafolio</a></li>
+                <li><a href="#projects">Portafolio</a></li>
                 <li><a href="#projects">Contacto</a></li>
             </ul>
         </nav>
@@ -306,7 +303,7 @@
 
 
         <!-- Sección de Contacto -->
-        <section id="contact" class="py-16 bg-gray-100" data-aos="fade">
+        <section id="contact" class="contact-section py-16 bg-gray-100" data-aos="fade">
             <div class="max-w-4xl mx-auto px-6">
                 <h1 class="text-4xl font-bold mb-6 text-center text-gray-800">Contacto</h1>
                 <p class="text-lg text-center mb-8 text-gray-600">
@@ -377,12 +374,13 @@
 
 
 
+
     </main>
 
     <script src="https://kit.fontawesome.com/5cc48846a7.js" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="script.js"></script>
+    <script type="module" src="script.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
     <script>

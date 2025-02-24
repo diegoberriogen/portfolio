@@ -1,31 +1,57 @@
+window.addEventListener('DOMContentLoaded', () => {
+    function toggleMenu() {
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenu.classList.toggle('active');
 
-function toggleMenu() {
-    const mobileMenu = document.querySelector('.mobile-menu');
-    mobileMenu.classList.toggle('active');
-
-    // Cerrar el menú al hacer clic fuera de él
-    document.addEventListener('click', function (e) {
-        if (!mobileMenu.contains(e.target) && !e.target.closest('.menu-icon')) {
-            mobileMenu.classList.remove('active');
-        }
+        // Cerrar el menú al hacer clic fuera de él
+        document.addEventListener('click', function (e) {
+            if (!mobileMenu.contains(e.target) && !e.target.closest('.menu-icon')) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+    }
+    // Asigna el evento al ícono del menú
+    document.querySelectorAll('.menu-icon').forEach(icon => {
+        icon.onclick = toggleMenu;
     });
-}
 
+
+    // Cambio de color del ícono del menú según la sección visible
+    const menuIcon = document.querySelector('.menu-icon');
+    const whiteSections = document.querySelectorAll('#about-me, #projects, #contact');
+
+    if (menuIcon && whiteSections.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+
+                    menuIcon.style.color = 'black';
+                } else {
+                    menuIcon.style.color = 'white';
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        // Observa cada sección
+        whiteSections.forEach(section => observer.observe(section));
+    }
+
+});
 
 //subtitulo del inicio
 var options = {
-    strings: ["Web Frontend", "Web Backend", "de APIs"],  // Las palabras que se alternan
-    typeSpeed: 50,  // Velocidad de escritura
-    backSpeed: 30,  // Velocidad de borrado
-    backDelay: 1000,  // Tiempo antes de borrar
-    loop: true  // Hacer que el ciclo se repita infinitamente
+    strings: ["Web Frontend", "Web Backend", "de APIs"],
+    typeSpeed: 50,
+    backSpeed: 30,
+    backDelay: 1000,
+    loop: true
 };
 
-var typed = new Typed("#typed-output", options);  // Aplica la animación al span
+var typed = new Typed("#typed-output", options);
 //
 
-
-// borrar
 window.addEventListener('DOMContentLoaded', () => {
     const listItems = document.querySelectorAll('.info-list li');
     const animationDone = localStorage.getItem('aboutAnimationDone');
@@ -46,7 +72,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// borrar
 
 // Obtener todos los enlaces
 const links = document.querySelectorAll('.nav-list a');
@@ -176,13 +201,6 @@ document.querySelectorAll('.skill-item').forEach(item => {
 // terminar
 
 // Projects
-const modal = document.getElementById('project-modal');
-const modalTitle = document.getElementById('modal-title');
-const modalDescription = document.getElementById('modal-description');
-const modalDetails = document.getElementById('modal-details');
-const modalLink = document.getElementById('modal-link');
-const closeModal = document.getElementById('close-modal');
-
 
 // Asignar eventos de clic a cada tarjeta del proyecto
 // Esperar a que el DOM esté completamente cargado
