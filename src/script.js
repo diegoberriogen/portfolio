@@ -1,5 +1,3 @@
-import './input.css';
-import './style.css';
 
 function toggleMenu() {
     const mobileMenu = document.querySelector('.mobile-menu');
